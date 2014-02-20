@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="pref_key_points_settings"
+        android:title="@string/pref_points_title" >
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_key_general_settings"
+        android:title="@string/pref_general_title" >
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_screen_on_checkbox"
+            android:title="@string/pref_title_screen_on" />
+    </PreferenceCategory>
+</PreferenceScreen>
