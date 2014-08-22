@@ -12,4 +12,7 @@
     <string name="pref_general_title">GENERAL</string>
     <string name="pref_title_screen_on">Keep screen awake</string>
 
+    <string name="main_decrement">-5</string>
+    <string name="main_increment">+5</string>
+
 </resources>

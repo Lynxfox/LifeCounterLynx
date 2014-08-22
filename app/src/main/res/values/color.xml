@@ -20,4 +20,9 @@
     <color name="actionbar_background">#0099cc</color>
     <color name="holo_blue">#0099cc</color>
 
+    <drawable name="button_transparent">#0033b5e5</drawable>
+    <drawable name="button_transparent_pressed">#A133b5e5</drawable>
+    <color name="button_transparent">#0033b5e5</color>
+    <color name="button_transparent_pressed">#A133b5e5</color>
+
 </resources>

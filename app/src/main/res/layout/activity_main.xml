@@ -1,242 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ZUNANJI LAYOUT -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@drawable/bk_n"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
-    <!-- ZGORNJA POLOVICA -->
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
     <LinearLayout
+        android:id="@+id/content_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="16dp"
+         android:paddingBottom="30dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        tools:ignore="ContentDescription,NestedWeights">
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:scaleX="0.9"
-            android:textColor="@color/holo_blue"
-            android:textSize="110sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:scaleX="0.9"
-            android:textColor="@color/holo_blue"
-            android:textSize="110sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- SPODNJA POLOVICA -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <!-- VSI GUMBI PLAYER 1 -->
-
+        <!-- Player 1 views -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:id="@+id/player1_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingRight="16dp">
 
-            <!-- LEVI DEL GUMBOV (P1) -->
-
-            <LinearLayout
+            <FrameLayout
+                android:id="@+id/player1_life_container"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
+                android:layout_weight="2">
 
-                <ImageButton
-                    android:id="@+id/p1poison"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:src="@drawable/skull" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/darker_gray" />
+                    <RelativeLayout
+                        android:id="@+id/player1_life_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center">
 
-                <Button
-                    android:id="@+id/p1minus5"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="-5"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_up" />
+                    </RelativeLayout>
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="fill_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/player1_life"
+                        style="@style/PlayerLifeText"
+                        android:fontFamily="sans-serif-light" />
 
-            <!-- DESNI DEL GUMBOV (P1) -->
+                    <RelativeLayout
+                        android:id="@+id/player1_life_remove"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_down" />
+                    </RelativeLayout>
 
-                <Button
-                    android:id="@+id/p1plus1"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="+1"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/darker_gray" />
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/p1plus5"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="+5"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/player1_life_increment"
+                    style="@style/PlayerLifeIncrementText.Increment"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player1_life_decrement"
+                    style="@style/PlayerLifeIncrementText.Decrement"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player1_life_increment_flipped"
+                    style="@style/PlayerLifeIncrementText.Increment.Flipped"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player1_life_decrement_flipped"
+                    style="@style/PlayerLifeIncrementText.Decrement.Flipped"
+                    android:fontFamily="sans-serif-light" />
+
+            </FrameLayout>
+
+
         </LinearLayout>
 
-        <!-- VSI GUMBI PLAYER 2 -->
-
+        <!-- Divider -->
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <!-- LEVI DEL GUMBOV (P2) -->
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-                <ImageButton
-                    android:id="@+id/p2poison"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:src="@drawable/skull" />
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/darker_gray" />
-
-                <Button
-                    android:id="@+id/p2minus5"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="-5"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:orientation="horizontal">
 
             <View
-                android:layout_width="1dp"
-                android:layout_height="fill_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/darker_gray" />
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="#4CFFFFFF" />
 
-            <!-- DESNI DEL GUMBOV (P2) -->
+            <ImageView
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:padding="16dp"
+                android:src="@drawable/ic_refresh" />
 
-            <LinearLayout
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/player2_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingRight="16dp">
+
+            <FrameLayout
+                android:id="@+id/player2_life_container"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
+                android:layout_weight="2">
 
-                <Button
-                    android:id="@+id/p2plus1"
-                    style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="+1"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@android:color/darker_gray" />
+                    <RelativeLayout
+                        android:id="@+id/player2_life_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center">
 
-                <Button
-                    android:id="@+id/p2plus5"
-                    style="@android:style/Widget.Holo.Button.Borderless.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="sans-serif-thin"
-                    android:text="+5"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_up" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/player2_life"
+                        style="@style/PlayerLifeText"
+                        android:fontFamily="sans-serif-light" />
+
+                    <RelativeLayout
+                        android:id="@+id/player2_life_remove"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_down" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/player2_life_increment"
+                    style="@style/PlayerLifeIncrementText.Increment"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player2_life_decrement"
+                    style="@style/PlayerLifeIncrementText.Decrement"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player2_life_increment_flipped"
+                    style="@style/PlayerLifeIncrementText.Increment.Flipped"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/player2_life_decrement_flipped"
+                    style="@style/PlayerLifeIncrementText.Decrement.Flipped"
+                    android:fontFamily="sans-serif-light" />
+
+            </FrameLayout>
+
         </LinearLayout>
+
+
     </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>
